@@ -15,3 +15,10 @@ print(matchObject.group(2))
 print(matchObject2.group())
 print(matchObject2.group(1))
 print(matchObject2.group(2))
+
+
+batRegex = re.compile(r'Bat(man|mobile|copter|bat)')
+mo = batRegex.search('Batmobile lost a wheel')
+
+print(mo.group())
+print(mo.group(1))
