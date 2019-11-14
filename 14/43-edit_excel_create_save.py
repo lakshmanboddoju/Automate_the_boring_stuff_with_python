@@ -1,6 +1,6 @@
 import os, openpyxl
 
-os.chdir(r'D:\Users\pavan\Documents\GitHub-lakshmanboddoju\Automate_the_boring_stuff_with_python\14')
+os.chdir(r'D:\Users\lakshman\Documents\Automate_the_boring_stuff_with_python\14')
 
 wb = openpyxl.Workbook()
 sheet = wb.get_sheet_by_name('Sheet')
