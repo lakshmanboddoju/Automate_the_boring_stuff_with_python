@@ -1,0 +1,36 @@
+#! python3
+
+# Program Template from https://stackabuse.com/how-to-send-emails-with-gmail-using-python/
+
+import smtplib
+
+gmailUser = 'personal@gmail.com'
+gmailPassword  = 'password'
+
+sentFrom = gmailUser
+sentTo = ['user1@gmail.com', 'user2@gmail.com']
+subject = 'Hello World'
+body = 'Hello World!\n Whats up? :)'
+
+emailText = """\
+From: %s
+To: %s
+Subject: %s
+
+%s
+""" % (sentFrom, ','.join(sentTo), subject, body)
+
+try:
+    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    server.ehlo()
+    server.login(gmailUser, gmailPassword)
+    server.sendmail(sentFrom, sentTo, emailText)
+    server.close()
+
+    print('Email Sent!')
+
+except:
+    print('Something went wrong during SMTP server connection!')
+
+
+    
